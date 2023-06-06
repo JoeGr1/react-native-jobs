@@ -12,6 +12,7 @@ import {
 import { useRouter } from "expo-router";
 
 import styles from "./welcome.style";
+import { icons, SIZES } from "../../../constants";
 
 const Welcome = () => {
   const router = useRouter();
@@ -20,7 +21,26 @@ const Welcome = () => {
     <View>
       <View style={styles.container}>
         <Text style={styles.userName}>Hello Joe</Text>
-        <Text style={styles.userName}>Find Your Perfect Job</Text>
+        <Text style={styles.welcomeMessage}>Find Your Perfect Job</Text>
+      </View>
+
+      <View style={styles.searchContainer}>
+        <View style={styles.searchWrapper}>
+          <TextInput
+            style={styles.searchInput}
+            value=""
+            onChange={() => {}}
+            placeholder="What are you looking for?"
+          />
+        </View>
+
+        <TouchableOpacity style={styles.searchBtn} onPress={() => {}}>
+          <Image
+            source={icons.search}
+            resizeMode="contain"
+            style={styles.searchBtnImage}
+          />
+        </TouchableOpacity>
       </View>
     </View>
   );
